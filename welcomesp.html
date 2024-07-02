@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to WAY!</title>
- <script>
+  <script>
     function getMobileOperatingSystem() {
       var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
@@ -59,6 +59,8 @@
     }
     .email-header img {
       width: 100px;
+      max-width: 100%;
+      height: auto;
     }
     .email-body {
       text-align: left;
@@ -95,16 +97,16 @@
     .center {
       text-align: center;
     }
-     .responsive-img {
+    .responsive-img {
       max-width: 100%;
       height: auto;
     }
   </style>
 </head>
-<body>
+<body onload="setAppStoreLink()">
   <div class="email-container">
     <div class="email-header">
-      <img src="https://where-are-you-way.github.io/image-hosting/images/Way.png" alt="WAY Logo">
+      <img src="https://where-are-you-way.github.io/image-hosting/images/Way.png" alt="WAY Logo" class="responsive-img">
     </div>
     <div class="email-body">
       <h1>Welcome to WAY!</h1>
@@ -114,38 +116,36 @@
       <p>To help you get started, we've included a few helpful resources:</p>
       <ul>
         <li>A quick guide to our service provider platform: This will walk you through the basics and get you up and running in no time.</li>
-        <li>Our <a href="https://www.yourwayapp.com/faq/"> FAQ section</a>: This is a treasure trove of answers to common questions new providers have.</li>
+        <li>Our <a href="https://www.yourwayapp.com/faq/">FAQ section</a>: This is a treasure trove of answers to common questions new providers have.</li>
       </ul>
       <p>Of course, our dedicated support team is always here to assist you. Don't hesitate to reach out if you have any questions or need anything at all.</p>
       <p>We're excited to partner with you, ${serviceProviderName}. Welcome to a world of growth and opportunity!</p>
       <p>Warmly,</p>
       <p>The WAY Team</p>
-
-       <div class="center">
+      <div class="center">
         <a id="appStoreLink" href="#">
-          <img src="https://where-are-you-way.github.io/image-hosting/images/bizCTA.png" alt="CTA" width="100" class="responsive-img">
+          <img src="https://where-are-you-way.github.io/image-hosting/images/bizCTA.png" alt="CTA" class="responsive-img">
         </a>
       </div>
-      
     </div>
     <div class="email-footer">
       <p>If you did not sign up for a WAY account, please ignore this email.</p>
       <div class="social-icons">
         <a href="https://x.com/wayapp_mobile?s=21">
-          <img src="https://where-are-you-way.github.io/image-hosting/images/x.png" alt="Twitter" width="30">
+          <img src="https://where-are-you-way.github.io/image-hosting/images/x.png" alt="Twitter" width="30" class="responsive-img">
         </a>
         <a href="https://www.facebook.com/wayapp_mobile">
-          <img src="https://where-are-you-way.github.io/image-hosting/images/facebook.png" alt="Facebook" width="30">
+          <img src="https://where-are-you-way.github.io/image-hosting/images/facebook.png" alt="Facebook" width="30" class="responsive-img">
         </a>
         <a href="https://www.linkedin.com/company/way-services-ltd/">
-          <img src="https://where-are-you-way.github.io/image-hosting/images/linkedin.png" alt="LinkedIn" width="30">
+          <img src="https://where-are-you-way.github.io/image-hosting/images/linkedin.png" alt="LinkedIn" width="30" class="responsive-img">
         </a>
         <a href="https://www.instagram.com/wayapp_mobile?igsh=MTY0d2RndXRxdDY2dg==">
-          <img src="https://where-are-you-way.github.io/image-hosting/images/instagram.png" alt="Instagram" width="30">
+          <img src="https://where-are-you-way.github.io/image-hosting/images/instagram.png" alt="Instagram" width="30" class="responsive-img">
         </a>
       </div>
       <p><a href="https://www.yourwayapp.com/terms">Terms of Use</a> | <a href="https://www.yourwayapp.com/privacy">Privacy Policy</a> | <a href="https://www.yourwayapp.com/contact">Support</a></p>
-      <p>&copy; 2024 WAY Services Ltd. All rights reserved.</p>
+      <p>Copyright © ${currentYear}. All rights reserved.</p>
     </div>
   </div>
 </body>
