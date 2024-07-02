@@ -30,9 +30,9 @@
       var linkElement = document.getElementById('appStoreLink');
       
       if (os === "Android") {
-        linkElement.href = "https://play.google.com/store/apps/details?id=com.yourwayapp";
+        linkElement.href = "https://play.google.com/store/apps/details?id=com.yourwayapp.business";
       } else if (os === "iOS") {
-        linkElement.href = "https://apps.apple.com/us/app/way-bookings/id6475635080";
+        linkElement.href = "https://apps.apple.com/us/app/way-business/id6475674978";
       } else {
         linkElement.href = "#";
         linkElement.innerText = "App not available for your device";
@@ -95,6 +95,10 @@
     .center {
       text-align: center;
     }
+     .responsive-img {
+      max-width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 <body>
@@ -119,7 +123,7 @@
 
        <div class="center">
         <a id="appStoreLink" href="#">
-          <img src="https://where-are-you-way.github.io/image-hosting/images/bizCTA.png" alt="CTA" width="1000">
+          <img src="https://where-are-you-way.github.io/image-hosting/images/bizCTA.png" alt="CTA" width="100" class="responsive-img">
         </a>
       </div>
       
