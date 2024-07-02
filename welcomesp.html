@@ -4,6 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to WAY!</title>
+ <script>
+    function getMobileOperatingSystem() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // Windows Phone must come first because its UA also contains "Android"
+      if (/windows phone/i.test(userAgent)) {
+        return "Windows Phone";
+      }
+
+      if (/android/i.test(userAgent)) {
+        return "Android";
+      }
+
+      // iOS detection
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "iOS";
+      }
+
+      return "unknown";
+    }
+
+    function setAppStoreLink() {
+      var os = getMobileOperatingSystem();
+      var linkElement = document.getElementById('appStoreLink');
+      
+      if (os === "Android") {
+        linkElement.href = "https://play.google.com/store/apps/details?id=com.yourwayapp";
+      } else if (os === "iOS") {
+        linkElement.href = "https://apps.apple.com/us/app/way-bookings/id6475635080";
+      } else {
+        linkElement.href = "#";
+        linkElement.innerText = "App not available for your device";
+      }
+    }
+  </script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -17,7 +52,6 @@
       background-color: #ffffff;
       padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
     .email-header {
       text-align: center;
@@ -27,7 +61,7 @@
       width: 100px;
     }
     .email-body {
-       text-align: left;
+      text-align: left;
       padding: 20px;
       color: #333333;
     }
@@ -36,7 +70,7 @@
       color: #333333;
     }
     .email-body p {
-       text-align: left;
+      text-align: left;
       font-size: 16px;
       line-height: 1.5;
     }
@@ -57,6 +91,9 @@
     .social-icons a {
       margin: 0 10px;
       display: inline-block;
+    }
+    .center {
+      text-align: center;
     }
   </style>
 </head>
@@ -79,6 +116,13 @@
       <p>We're excited to partner with you, ${serviceProviderName}. Welcome to a world of growth and opportunity!</p>
       <p>Warmly,</p>
       <p>The WAY Team</p>
+
+       <div class="center">
+        <a id="appStoreLink" href="#">
+          <img src="https://where-are-you-way.github.io/image-hosting/images/userCTA.png" alt="CTA" width="1000">
+        </a>
+      </div>
+      
     </div>
     <div class="email-footer">
       <p>If you did not sign up for a WAY account, please ignore this email.</p>
